@@ -4,14 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddUserComponent } from './add-user.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AddUserComponent
-  }
+    {
+        path: '',
+        component: AddUserComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class AddUserRoutingModule { }

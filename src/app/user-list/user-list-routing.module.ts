@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: UserListComponent
-  }
+    {
+        path: '',
+        component: UserListComponent
+    }
 ];
 
 @NgModule({
