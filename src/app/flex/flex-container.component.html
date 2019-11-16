@@ -1,0 +1,55 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="4px">
+    <mat-card>
+        <mat-card-title>
+            <span>User Management</span>
+        </mat-card-title>
+        <mat-card-subtitle><span>Add new user to the system</span></mat-card-subtitle>
+        <mat-card-content>
+            <form action="" [formGroup]="userForm">
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="Id" formControlName="id">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="addUser()">Add</button>
+            <button mat-raised-button color="secondary" (click)="resetForm()">Reset</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="user-list-card">
+        <mat-card-title>
+            <span>User List</span>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <span>Users list from the system</span>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
+                    <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+                </ng-container>
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                    <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                    <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+                    <td mat-cell *matCellDef=""></td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>
