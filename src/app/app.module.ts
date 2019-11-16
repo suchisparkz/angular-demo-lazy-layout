@@ -4,10 +4,11 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AddUserModule } from './add-user/add-user.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserListModule } from './user-list/user-list.module';
 
-import { FlexContainerModule } from '../app/flex/flex-container.module'
 import { FakeBackendService } from './http-fake-service/fake-backend-service';
 
 @NgModule({
@@ -15,12 +16,13 @@ import { FakeBackendService } from './http-fake-service/fake-backend-service';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    AddUserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    FlexContainerModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(FakeBackendService)
+    InMemoryWebApiModule.forRoot(FakeBackendService),
+    UserListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

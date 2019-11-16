@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="4px">
+    <mat-card>
+        <mat-card-title>
+            <span>User Management</span>
+        </mat-card-title>
+        <mat-card-subtitle><span>Add new user to the system</span></mat-card-subtitle>
+        <mat-card-content>
+            <form action="" [formGroup]="userForm">
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <input type="text" matInput placeholder="Id" formControlName="id">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="addUser()">Add</button>
+            <button mat-raised-button color="secondary" (click)="resetUserForm()">Reset</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
