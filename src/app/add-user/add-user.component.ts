@@ -11,9 +11,9 @@ export class AddUserComponent implements OnInit {
     constructor(private readonly fb: FormBuilder) {}
     initUserForm(): void {
         this.userForm = this.fb.group({
-            'firstName': ['', [Validators.required]],
-            'lastName': ['', [Validators.required]],
-            'id': ['', [Validators.required]]
+            firstName: ['', [Validators.required]],
+            lastName: ['', [Validators.required]],
+            id: ['', [Validators.required]]
         });
     }
     ngOnInit(): void {

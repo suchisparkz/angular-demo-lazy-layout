@@ -6,9 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class UserService {
     private url = 'api/users';
-    httpOptions = { 
-        header: new HttpHeaders({'content-type': 'applications/json'})
-    };
+    httpOptions = { header: new HttpHeaders({'content-type': 'applications/json'}) };
     constructor(private readonly http: HttpClient) {
     }
     getUsers(): Observable<any> {
@@ -16,6 +14,6 @@ export class UserService {
             .pipe(
                 tap(() => console.log('Fetching users.')),
                 catchError(error => console.log)
-            )
+            );
     }
 }

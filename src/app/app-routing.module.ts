@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AddUserModule } from './add-user/add-user.module';
-import { UserListModule } from './user-list/user-list.module';
-
 const routes: Routes = [
   {
     path: 'add',
