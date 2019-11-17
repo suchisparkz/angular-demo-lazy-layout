@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class AddUserComponent implements OnInit {
     userForm: FormGroup;
+    addUser(): void {
+    }
     constructor(private readonly fb: FormBuilder) {}
     initUserForm(): void {
         this.userForm = this.fb.group({
