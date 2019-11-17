@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FakeBackendService } from './http-fake-service/fake-backend-service';
-import { MenuModule } from './menu/menu.module';
+import { FakeBackendService } from './services';
+import { MenuModule } from './menu';
 
 @NgModule({
     declarations: [

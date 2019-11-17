@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { UserService } from './user-service';
+import { UserService } from '../../services';
 
 @Component({
     selector: 'app-user-list',
