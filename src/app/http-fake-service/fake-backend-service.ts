@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { User } from '../shared/User';
 
 @Injectable({
     providedIn: 'root'
 })
 export class FakeBackendService implements InMemoryDbService {
     createDb() {
-        const users = [
+        const users: User[] = [
             { firstName: 'Joe', lastName: 'Rogers', id: 1 },
             { firstName: 'Mani', lastName: 'Ganesh', id: 2 },
             { firstName: 'Rocky', lastName: 'Singh', id: 3 },
@@ -17,7 +18,7 @@ export class FakeBackendService implements InMemoryDbService {
             { firstName: 'Russel', lastName: 'King', id: 8 },
             { firstName: 'Tareng', lastName: 'Raj', id: 9 },
             { firstName: 'Shakti', lastName: 'Mani', id: 10 }
-        ]
+        ];
         return {
             users
         };
