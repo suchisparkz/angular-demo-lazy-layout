@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { AddUserRoutingModule } from './add-user-routing.module';
-import { AddUserComponent } from './add-user.component';
+import { AddUserComponent } from './components';
 
 @NgModule({
     declarations: [AddUserComponent],
