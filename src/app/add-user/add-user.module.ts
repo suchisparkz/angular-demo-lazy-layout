@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,6 +15,7 @@ import { AddUserComponent } from './components';
     declarations: [AddUserComponent],
     entryComponents: [AddUserComponent],
     imports: [
+        CommonModule,
         AddUserRoutingModule,
         AppAlertModule,
         FormsModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { User } from '../shared/User';
 import { LoggerService } from './logger.service';
 
@@ -16,15 +16,13 @@ export class UserService {
     getUsers(): Observable<any> {
         return this.http.get(this.url)
             .pipe(
-                tap(() => this.loggerService.info('Fetching users list')),
-                catchError(error => this.loggerService.info)
+                tap(() => this.loggerService.info('Fetching user list.'))
             );
     }
     addUser(user: User): Observable<any> {
         return this.http.post(this.url, user, this.httpOptions)
             .pipe(
-                tap(() => this.loggerService.info('Adding new user')),
-                catchError(error => this.loggerService.error)
+                tap(() => this.loggerService.info('Adding new user.'))
             );
     }
 }
