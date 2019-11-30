@@ -25,7 +25,7 @@ export class UserListComponent implements OnInit {
         // data comes quickly, so added a delay to see the spinner
         this.userService.getUsers()
             .subscribe((data: User[]) => {
-                this.isLoading = false;
+                this.isLoading = false; // User List Spinner 
                 this.dataSource = new MatTableDataSource(data);
                 this.dataSource.sort = this.sort;
         });
