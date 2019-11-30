@@ -23,7 +23,7 @@ export class UserListComponent implements OnInit {
     ngOnInit(): void {
         this.isLoading = true; // Loading for the spinner inside table
         // data comes quickly, so added a delay to see the spinner
-        this.userService.getUsers().pipe(delay(1000))
+        this.userService.getUsers()
             .subscribe((data: User[]) => {
                 this.isLoading = false;
                 this.dataSource = new MatTableDataSource(data);
